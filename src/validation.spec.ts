@@ -1,7 +1,7 @@
-import { struct, createValidates,fromValidate, createNullableValidates } from './validation';
-import { isString,length } from './string'
-import { isNumber,min } from './number'
-import {right,left} from 'fp-ts/Either'
+import { struct, createValidates, fromValidate, createNullableValidates, fromNullableValidate } from './validation';
+import { isString, length } from './string'
+import { isNumber, min } from './number'
+import { right, left } from 'fp-ts/Either'
 interface User {
   name: string,
   age?: number
@@ -23,8 +23,8 @@ describe('validation', () => {
     )
   )
 
-  const nullableAgeValidate = fromValidate(
-    createNullableValidates(
+  const nullableAgeValidate = fromNullableValidate(
+    createValidates(
       isNumber('is not number'),
       min(5)('at least 5')
     )
@@ -37,7 +37,7 @@ describe('validation', () => {
     name: nameValidate,
     age: nullableAgeValidate
   })
-  
+
   it('struct user validation', () => {
     const user: User = {
       name: "abab"
@@ -63,18 +63,18 @@ describe('validation', () => {
         name: "asdb",
       },
       user: {
-        name:"sdad",
+        name: "sdad",
         age: 10
       }
     }
 
-    const follower2:Follower = {
+    const follower2: Follower = {
       follow: {
         name: "fffd",
         age: 3
       },
       user: {
-        name:"sdad",
+        name: "sdad",
         age: 10
       }
     }

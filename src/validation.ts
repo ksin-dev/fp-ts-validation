@@ -47,7 +47,13 @@ declare module 'fp-ts/HKT' {
 
 export const fromValidate = <A>(validate: (a: A) => Either<string, A>): Validation<A> => {
   return {
-    validate: (a: A) => validate(a)
+    validate: createValidates(validate) as Validate1<A>
+  };
+}
+
+export const fromNullableValidate = <A>(validate: (a: A) => Either<string, A>): Validation<A> => {
+  return {
+    validate: createNullableValidates(validate) as Validate1<A>
   };
 }
 
