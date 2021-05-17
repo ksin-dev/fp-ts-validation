@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "postinstall": "npm build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "fp-ts": "^2.10.5",
