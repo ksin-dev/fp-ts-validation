@@ -10,3 +10,7 @@ export const contains = (containS: string) => createValidate<string>(SH.contains
 export const regex = (regex: RegExp) => createValidate<string>(
   s => regex.test(s)
 )
+
+export const or = (...values: string[]) => createValidate<string>(
+  s => values.some((v) => v === s)
+)

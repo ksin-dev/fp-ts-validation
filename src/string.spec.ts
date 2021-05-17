@@ -1,5 +1,5 @@
 import { left, right } from 'fp-ts/lib/Either'
-import { minLength, maxLength, isString, contains, length, regex } from './string'
+import { minLength, maxLength, isString, contains, length, regex, or } from './string'
 import { createValidates, fromValidate } from './Validation'
 
 
@@ -73,5 +73,28 @@ describe("validation: string", () => {
     ).toEqual(
       left('fail')
     )
+  })
+
+  it('or', () => {
+    const a = 'a'
+    const b = 'a'
+    const c = 'c'
+    const validation = fromValidate(
+      createValidates(
+        or('a', 'b')('must a or b')
+      )
+    );
+
+    expect(
+      validation.validate(a)
+    ).toEqual(right(a))
+
+    expect(
+      validation.validate(b)
+    ).toEqual(right(b))
+
+    expect(
+      validation.validate(c)
+    ).toEqual(left('must a or b'))
   })
 })
