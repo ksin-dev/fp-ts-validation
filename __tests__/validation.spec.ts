@@ -1,6 +1,6 @@
-import { struct, createValidates, fromValidate, createNullableValidates, fromNullableValidate } from './validation';
-import { isString, length } from './string'
-import { isNumber, min } from './number'
+import { struct, createValidates, fromValidate, createNullableValidates, fromNullableValidate } from '../src/validation';
+import { isString, length } from '../src/string'
+import { isNumber, min } from '../src/number'
 import { right, left } from 'fp-ts/Either'
 interface User {
   name: string,

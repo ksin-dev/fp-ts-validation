@@ -1,6 +1,6 @@
 import { left, right } from 'fp-ts/lib/Either'
-import { minLength, maxLength, isString, contains, length, regex, or } from './string'
-import { createValidates, fromValidate } from './Validation'
+import { minLength, maxLength, isString, contains, length, regex, or } from '../src/string'
+import { createValidates, fromValidate } from '../src/validation'
 
 
 

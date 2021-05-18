@@ -1,5 +1,5 @@
-import { createValidates, fromValidate } from './validation'
-import { isArray } from './array'
+import { createValidates, fromValidate } from '../src/validation'
+import { isArray } from '../src/array'
 import { left, right } from 'fp-ts/lib/Either';
 
 describe('array', () => {

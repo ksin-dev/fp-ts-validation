@@ -1,5 +1,5 @@
-import { isNumber, min, max, range } from './number';
-import { fromValidate } from './validation'
+import { isNumber, min, max, range } from '../src/number';
+import { fromValidate } from '../src/validation'
 import { right, left } from 'fp-ts/Either'
 
 describe("validation: number", () => {
