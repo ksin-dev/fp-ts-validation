@@ -9,7 +9,7 @@
   "author": "hyuk kim",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "tsc",
     "postinstall": "npm run build"
   },

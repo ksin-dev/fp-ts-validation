@@ -3,6 +3,7 @@ import {
 } from 'fp-ts/Either';
 import * as A from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
+
 export type Check1<A> = (a: A) => boolean;
 export type Check2<A, B> = (a: A) => (b: B) => boolean
 
